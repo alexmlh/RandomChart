@@ -95,9 +95,9 @@ function draw() {
 }
 
 document.addEventListener("keydown", function (event) {
-  event.preventDefault();
-  if (event.key === "Enter") {
+  if (event.code === "Space") {
     draw();
+    event.preventDefault();
   }
 });
 
