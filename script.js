@@ -21,13 +21,13 @@ function simulateCoinTossesAndDeviations(numTosses) {
 function getData() {
   let numTosses = document.getElementById("reps").value;
   if (numTosses > 1e6) numTosses = 1e6;
-  const labels = Array.from({ length: numTosses }, (_, i) => `${i + 1}`);
+  const labels = Array.from({ length: numTosses }, (_, i) => `${i + 1}`).unshift('0');
   const deviations = simulateCoinTossesAndDeviations(numTosses);
   let lastOne = deviations[deviations.length - 1];
   document.getElementById("res").textContent =
     lastOne +
     " (" +
-    ((lastOne / (numTosses / 2)) * 100).toFixed(1) +
+    ((lastOne / numTosses ) * 100).toFixed(1) +
     "% ) HEADS " +
     (numTosses / 2 - Math.abs(lastOne));
 
