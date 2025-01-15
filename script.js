@@ -24,13 +24,12 @@ function getData() {
   const labels = Array.from({ length: numTosses }, (_, i) => `${i + 1}`);
   const deviations = simulateCoinTossesAndDeviations(numTosses);
   let lastOne = deviations[deviations.length - 1];
-  console.log(deviations);
   document.getElementById("res").textContent =
     lastOne +
     " (" +
-    ((lastOne / numTosses) * 100).toFixed(1) +
+    ((lastOne / numTosses / 2) * 100).toFixed(1) +
     "% ) HEADS " +
-    (numTosses - lastOne) / 2;
+    (numTosses - lastOne);
 
   const data = {
     labels: labels,
