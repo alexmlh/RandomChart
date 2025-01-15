@@ -30,7 +30,7 @@
     <h3>Coin Random Toss Chart</h3>
     <button onclick="draw()">new Chart</button>
     <label for="reps">number of tosses </label>
-    <input id="reps" type="number" name="reps" value="10000" max="100000" />
+    <input id="reps" type="number" name="reps" value="10000" max="100000" oninput="draw()" />
     <p>diviation: <span id="res"></span></p>
     <canvas id="deviationChart" width="800" height="400"></canvas>
     <script src="script.js"></script>
