@@ -29,7 +29,7 @@ function getData() {
     " (" +
     ((lastOne / numTosses / 2) * 100).toFixed(1) +
     "% ) HEADS " +
-    (numTosses / 2 - lastOne);
+    (numTosses / 2 - Math.abs(lastOne));
 
   const data = {
     labels: labels,
