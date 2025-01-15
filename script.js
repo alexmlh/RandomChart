@@ -27,7 +27,7 @@ function getData() {
   document.getElementById("res").textContent =
     lastOne +
     " (" +
-    ((lastOne / numTosses / 2) * 100).toFixed(1) +
+    ((lastOne / (numTosses / 2)) * 100).toFixed(1) +
     "% ) HEADS " +
     (numTosses / 2 - Math.abs(lastOne));
 
