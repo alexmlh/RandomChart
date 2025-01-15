@@ -6,12 +6,19 @@
     <title>Deviation from Equal Coin Toss Chart</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       h3,
       button,
-      p {
-        /* text-align: center; */
+      p,
+      input {
         display: inline-block;
-        margin: 1rem;
+      }
+      h3 {
+        margin: 0 2rem;
       }
       #reps {
         width: 80px;
@@ -23,15 +30,45 @@
         padding: 6px;
         color: white;
         cursor: pointer;
+        position: relative;
+        top: 10px;
+      }
+      .container {
+        margin: 1rem;
+        border: 1px solid gray;
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        border-radius: 10px;
       }
     </style>
   </head>
   <body>
     <h3>Coin Random Toss Chart</h3>
-    <button onclick="draw()">new Chart</button>
-    <label for="reps">number of tosses </label>
-    <input id="reps" type="number" name="reps" value="10000" max="100000" oninput="draw()" />
-    <p>diviation: <span id="res"></span></p>
+    <button onclick="draw()">
+      New Chart<br /><span style="font-size: 10px">or press enter</span>
+    </button>
+    <div class="container">
+      <label for="reps">Number of tosses</label>
+      <input
+        id="reps"
+        type="number"
+        name="reps"
+        value="10"
+        max="100000"
+        oninput="draw()"
+      />
+    </div>
+    <div class="container">
+      <label for="checkbox">Random candle size</label>
+      <input
+        type="checkbox"
+        name="checkbox"
+        id="checkbox"
+        onchange="draw()"
+        checked
+      />
+    </div>
+    <p>Deviation: <span id="res"></span></p>
     <canvas id="deviationChart" width="800" height="400"></canvas>
     <script src="script.js"></script>
   </body>
